@@ -26,7 +26,7 @@ export color_light_gray='\e[0;37m'
 ## MAC SETTINGS
 if [ $OS == "Darwin" ]; then
     # add mamp on mac
-    export PATH=/Applications/MAMP/bin/php5/bin/:/Applications/MAMP/bin/apache2/bin/:$PATH
+    export PATH=/Applications/MAMP/bin/php5.2/bin/:/Applications/MAMP/bin/apache2/bin/:$PATH
 
     # set editor
     export EDITOR='mate -w'
@@ -40,6 +40,7 @@ if [ $OS == "Darwin" ]; then
     COLOR_OPTIONS='-G'
 
     # alias specific for mac
+	alias git='hub'
     alias zf='zf.sh'
     alias m='mate .'
     alias top='top -o cpu'
