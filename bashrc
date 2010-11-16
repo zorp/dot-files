@@ -23,10 +23,14 @@ export color_gray='\e[0;90m'
 export color_light_gray='\e[0;37m'
 
 
+# add local directories
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+
 ## MAC SETTINGS
 if [ $OS == "Darwin" ]; then
     # add mamp on mac
-    export PATH=/Applications/MAMP/bin/php5.2/bin/:/Applications/MAMP/bin/apache2/bin/:$PATH
+    export PATH=$PATH:/Applications/MAMP/bin/php5.2/bin/:/Applications/MAMP/bin/apache2/bin/
 
     # set editor
     export EDITOR='mate -w'
@@ -34,15 +38,18 @@ if [ $OS == "Darwin" ]; then
     GIT_PIECE='$(__git_ps1 " \[$color_yellow\](%s)\[$color_none\]")'
 
     # bash completion through brew
-    . `brew --prefix`/etc/bash_completion
+    if [ -f `brew --prefix`/etc/bash_completion ]; then
+        . `brew --prefix`/etc/bash_completion
+    fi
+
 
     # color options for ls
     COLOR_OPTIONS='-G'
 
     # alias specific for mac
-	alias git='hub'
-    alias zf='zf.sh'
+    alias git='hub'
     alias m='mate .'
+    alias zf='zf.sh'
     alias top='top -o cpu'
     alias logs='tail -f /Applications/MAMP/logs/php_error.log /Applications/MAMP/logs/access.log /Applications/MAMP/logs/error.log /Applications/MAMP/logs/mysql_error_log /Applications/MAMP/logs/mysql_error_log.err /Applications/MAMP/logs/apache_error_log'
 
@@ -85,8 +92,6 @@ alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' 
 DATE_PIECE="\[${color_gray}\]\$(date '+%a %H:%M:%S')\[${color_none}\]"
 export PS1="${DATE_PIECE} \u\[${color_green}\]@\[${color_none}\]\h \[${color_gray}\]\w${GIT_PIECE}\n\[${color_green}\]\$\[${color_none}\] "
 
-# add ruby gem paths
-export PATH=~/.gem/ruby/1.8/bin:$PATH
-
-# add local directories
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+if [[ -s /Users/christian/.rvm/scripts/rvm ]] ; then 
+	source /Users/christian/.rvm/scripts/rvm ; 
+fi
