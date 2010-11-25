@@ -1,8 +1,8 @@
 [user]
-	name = Christian Kirkegaard
-	email = christian@art-box.dk
+	name = Rasmus Frey
+	email = frey@verk.dk
 [github]
-	user = ranza
+	user = zorp
 [core]
 	autocrlf = input
 	editor = mate

@@ -2,7 +2,6 @@
 OS=`uname -s`
 COLOR_OPTIONS=''
 
-
 ## BASH COLORS
 export color_none='\e[0m'
 export color_white='\e[1;37m'
@@ -48,25 +47,11 @@ if [ $OS == "Darwin" ]; then
     # alias specific for mac
     alias git='hub'
     alias m='mate .'
-    alias zf='zf.sh'
     alias top='top -o cpu'
     alias logs='tail -f /Applications/MAMP/logs/php_error.log /Applications/MAMP/logs/access.log /Applications/MAMP/logs/error.log /Applications/MAMP/logs/mysql_error_log /Applications/MAMP/logs/mysql_error_log.err /Applications/MAMP/logs/apache_error_log'
 
     # add z, the new j
-    . ~/.bin/z.sh
-fi
-
-
-## LINUX SETTINGS
-if [ $OS == "Linux" ]; then
-    # bash completions
-    . /etc/bash_completion
-
-    # set editor
-    export EDITOR='vim'
-
-    # color options for ls
-    COLOR_OPTIONS='--color=auto'
+    #. ~/.bin/z.sh
 fi
 
 
@@ -95,7 +80,3 @@ alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' 
 # prompt
 DATE_PIECE="\[${color_gray}\]\$(date '+%a %H:%M:%S')\[${color_none}\]"
 export PS1="${DATE_PIECE} \u\[${color_green}\]@\[${color_none}\]\h \[${color_gray}\]\w${GIT_PIECE}\n\[${color_green}\]\$\[${color_none}\] "
-
-if [[ -s /Users/christian/.rvm/scripts/rvm ]] ; then
-	source /Users/christian/.rvm/scripts/rvm ;
-fi
