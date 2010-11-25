@@ -35,13 +35,12 @@ if [ $OS == "Darwin" ]; then
     # set editor
     export EDITOR='mate -w'
 
-    GIT_PIECE='$(__git_ps1 " \[$color_yellow\](%s)\[$color_none\]")'
+    GIT_PIECE='$(__git_ps1 " \[$color_yellow\](%s$(parse_git_dirty))\[$color_none\]")'
 
     # bash completion through brew
     if [ -f `brew --prefix`/etc/bash_completion ]; then
         . `brew --prefix`/etc/bash_completion
     fi
-
 
     # color options for ls
     COLOR_OPTIONS='-G'
@@ -80,6 +79,11 @@ if [ $TERM == "xterm-color" ]; then
 fi
 
 
+function parse_git_dirty {
+    [[ $(git status 2> /dev/null | grep -i "Changed but not updated") ]] && echo " ${color_red}*${color_yellow}"
+}
+
+
 ## GENERAL SETTINGS
 # bash smart tab completion
 bind "set show-all-if-ambiguous On"
@@ -92,6 +96,6 @@ alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' 
 DATE_PIECE="\[${color_gray}\]\$(date '+%a %H:%M:%S')\[${color_none}\]"
 export PS1="${DATE_PIECE} \u\[${color_green}\]@\[${color_none}\]\h \[${color_gray}\]\w${GIT_PIECE}\n\[${color_green}\]\$\[${color_none}\] "
 
-if [[ -s /Users/christian/.rvm/scripts/rvm ]] ; then 
-	source /Users/christian/.rvm/scripts/rvm ; 
+if [[ -s /Users/christian/.rvm/scripts/rvm ]] ; then
+	source /Users/christian/.rvm/scripts/rvm ;
 fi
