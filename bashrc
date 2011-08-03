@@ -29,16 +29,18 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 ## MAC SETTINGS
 if [ $OS == "Darwin" ]; then
     # add mamp on mac
-    export PATH=$PATH:/Applications/MAMP/bin/php5.2/bin/:/Applications/MAMP/bin/apache2/bin/
+    export PATH="/Applications/MAMP/Library/bin:/Applications/MAMP/bin/php/php5.2.17/bin:$PATH"
+    #export PATH=$PATH:/Applications/MAMP/bin/php5.2/bin/:/Applications/MAMP/bin/apache2/bin/
 
     # set editor
     export EDITOR='mate -w'
 
-    GIT_PIECE='$(__git_ps1 " \[$color_yellow\](%s$(parse_git_dirty))\[$color_none\]")'
+    GIT_PIECE='$(__git_ps1 " \[$color_yellow\](%s)\[$color_none\]")'
 
     # bash completion through brew
     if [ -f `brew --prefix`/etc/bash_completion ]; then
         . `brew --prefix`/etc/bash_completion
+        GIT_PS1_SHOWDIRTYSTATE=true
     fi
 
     # color options for ls
@@ -51,7 +53,7 @@ if [ $OS == "Darwin" ]; then
     alias logs='tail -f /Applications/MAMP/logs/php_error.log /Applications/MAMP/logs/access.log /Applications/MAMP/logs/error.log /Applications/MAMP/logs/mysql_error_log /Applications/MAMP/logs/mysql_error_log.err /Applications/MAMP/logs/apache_error_log'
 
     # add z, the new j
-    #. ~/.bin/z.sh
+    . ~/.bin/z.sh
 fi
 
 
@@ -62,11 +64,6 @@ if [ $TERM == "xterm-color" ]; then
     alias la="ls -a $COLOR_OPTIONS"
     alias lal="ls -lha $COLOR_OPTIONS"
 fi
-
-
-function parse_git_dirty {
-    [[ $(git status 2> /dev/null | grep -i "Changed but not updated") ]] && echo " ${color_red}*${color_yellow}"
-}
 
 
 ## GENERAL SETTINGS
