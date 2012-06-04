@@ -29,7 +29,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 ## MAC SETTINGS
 if [ $OS == "Darwin" ]; then
     # add mamp on mac
-    export PATH="/Applications/MAMP/Library/bin:/Applications/MAMP/bin/php/php5.2.17/bin:$PATH"
+    export PATH="/Applications/MAMP/Library/bin:/Applications/MAMP/bin/php/php5.3.6/bin:$PATH"
     #export PATH=$PATH:/Applications/MAMP/bin/php5.2/bin/:/Applications/MAMP/bin/apache2/bin/
 
     # set editor
