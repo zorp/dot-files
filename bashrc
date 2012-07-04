@@ -2,6 +2,8 @@
 OS=`uname -s`
 COLOR_OPTIONS=''
 
+export CLICOLOR=1;
+
 ## BASH COLORS
 export color_none='\e[0m'
 export color_white='\e[1;37m'
@@ -46,6 +48,15 @@ if [ $OS == "Darwin" ]; then
     # color options for ls
     COLOR_OPTIONS='-G'
 
+	export SSDUMPNAME=/tmp/ssdump.png
+	function ssdump() {
+	  echo "Select window to dump"
+	  screencapture -i ${SSDUMPNAME}
+	  curl -F file=@"${SSDUMPNAME}" dl.gs
+	  echo
+	}
+	alias ssdump=ssdump
+
     # alias specific for mac
     alias git='hub'
     alias m='mate .'
@@ -56,6 +67,17 @@ if [ $OS == "Darwin" ]; then
     . ~/.bin/z.sh
 fi
 
+## LINUX SETTINGS
+if [ $OS == "Linux" ]; then
+    # bash completions
+    . /etc/bash_completion
+
+    # set editor
+    export EDITOR='vim'
+
+    # color options for ls
+    COLOR_OPTIONS='--color=auto'
+fi
 
 ## USE COLORS FOR LS
 if [ $TERM == "xterm-color" ]; then
