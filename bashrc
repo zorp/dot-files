@@ -80,7 +80,7 @@ if [ $OS == "Linux" ]; then
 fi
 
 ## USE COLORS FOR LS
-if [ $TERM == "xterm-color" ]; then
+if [ $TERM == "xterm-256color" -o $TERM == "xterm-color" ]; then
     alias ls="ls $COLOR_OPTIONS"
     alias ll="ls -lh $COLOR_OPTIONS"
     alias la="ls -a $COLOR_OPTIONS"
