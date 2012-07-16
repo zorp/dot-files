@@ -7,7 +7,7 @@
 	autocrlf = input
 	editor = "mate -w"
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	excludesfile = /Users/rasmus/.gitignore_global
+	excludesfile = /Users/rasmusfrey/.dot-files/gitignore_global
 [color]
 	ui = auto
 [color "branch"]
