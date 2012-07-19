@@ -25,7 +25,7 @@ export color_light_gray='\e[0;37m'
 
 
 # add local directories
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/Users/rasmusfrey/.bin/:$PATH
 
 
 ## MAC SETTINGS
@@ -95,6 +95,9 @@ bind "set show-all-if-ambiguous On"
 # general aliases
 alias g="git"
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -nr | head -n 20"
+
+# work related aliases
+alias latto-dir="cd ~/Sites/work/ding/ding2tal.ting.dk/profiles/ding2/themes/latto/"
 
 # prompt
 DATE_PIECE="\[${color_gray}\]\$(date '+%a %H:%M:%S')\[${color_none}\]"
