@@ -98,6 +98,7 @@ alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' 
 
 # work related aliases
 alias latto-dir="cd ~/Sites/work/ding/ding2tal.ting.dk/profiles/ding2/themes/latto/"
+alias d-cc="drush cc all"
 
 # prompt
 DATE_PIECE="\[${color_gray}\]\$(date '+%a %H:%M:%S')\[${color_none}\]"
