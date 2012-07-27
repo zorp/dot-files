@@ -25,7 +25,7 @@ export color_light_gray='\e[0;37m'
 
 
 # add local directories
-export PATH=/usr/local/bin:/usr/local/sbin:/Users/rasmusfrey/.bin/:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/Users/rasmusfrey/.bin:$PATH
 
 
 ## MAC SETTINGS
@@ -64,7 +64,8 @@ if [ $OS == "Darwin" ]; then
     alias logs='tail -f /Applications/MAMP/logs/php_error.log /Applications/MAMP/logs/access.log /Applications/MAMP/logs/error.log /Applications/MAMP/logs/mysql_error_log /Applications/MAMP/logs/mysql_error_log.err /Applications/MAMP/logs/apache_error_log'
 
     # add z, the new j
-    . ~/.bin/z.sh
+	. `brew --prefix`/etc/profile.d/z.sh #Installed by brew
+    #. ~/.bin/z.sh
 fi
 
 ## LINUX SETTINGS
