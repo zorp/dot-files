@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# Bash script for recursively run a git commit, pull and push with starting point in current folder.
+#
+# Usage:
+# $ git_commit.sh 'You git commit message' exclude_dir_1 exclude_dir_2 exclude_dir_3
+# First param: Is the git commit messag.
+# Every following param: folders you wish to exclude
+#
+# Why this script
+# In some cases I work with folders containing multiple git reposotories as sub folders.
+# Often similar updates are performed to all or more than one of these.
+# It is convinient to commit these changes in one simple command.
+
 # nice in_array function taken from here: http://mykospark.net/tag/in_array/
 function in_array() {
   local x
@@ -31,6 +43,7 @@ else
   
   # loop all elements in your current location
   for file in *; do
+    # skip anything not a directory
     if [ -d $file ]; then
       # skip anything in a contrib folder (Drupal lingo)
       if [ $file != 'contrib' ]; then
@@ -45,9 +58,9 @@ else
             echo "EXCLUDED - Doing nothing with" $file;
           else
             echo "COMMIT & PUSH - Commit git repro with message '"$gitcommit"' in" $file;
-            #git commit -am "$gitcommit";
-            #git pull;
-            #git push;
+            git commit -am "$gitcommit";
+            git pull;
+            git push;
           fi
         fi
         cd ..;
