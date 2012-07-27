@@ -44,7 +44,7 @@ else
 					if [ "${RET}" -eq 0 ]; then
 	        	echo "EXCLUDED - Doing nothing with" $file;
 	        else
-						echo "COMMIT & PUSH - Commit git repro with message '"$gitcommit"' in" $file;
+					  echo "COMMIT & PUSH - Commit git repro with message '"$gitcommit"' in" $file;
 						#git commit -am "$gitcommit";
 						#git pull;
 						#git push;
