@@ -24,14 +24,18 @@ export color_gray='\e[0;90m'
 export color_light_gray='\e[0;37m'
 
 
+# set PATH so it includes user's private bin if it exists
+if [ -d ~/.bin ] ; then
+PATH=~/.bin:"${PATH}"
+fi
 # add local directories
-export PATH=/usr/local/bin:/usr/local/sbin:/Users/rasmusfrey/.bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 
 ## MAC SETTINGS
 if [ $OS == "Darwin" ]; then
     # add mamp on mac
-    export PATH="/Applications/MAMP/Library/bin:/Applications/MAMP/bin/php/php5.3.6/bin:$PATH"
+    #export PATH="/Applications/MAMP/Library/bin:/Applications/MAMP/bin/php/php5.3.6/bin:$PATH"
     #export PATH=$PATH:/Applications/MAMP/bin/php5.2/bin/:/Applications/MAMP/bin/apache2/bin/
 
     # set editor

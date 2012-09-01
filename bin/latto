@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 echo "Starting the aakb tunnel so you can utilize ding.brønd my lord."
-/Users/rasmusfrey/Sites/work/ding/aakb_ssh_tunnel.sh
+~/Sites/work/ding/aakb_ssh_tunnel.sh
 echo "pulling latest version of latto theme"
-cd /Users/rasmusfrey/Sites/work/ding/ding2tal.ting.dk/profiles/ding2/themes/latto/
+cd ~/Sites/work/ding/ding2tal.ting.dk/profiles/ding2/themes/latto/
 git pull
