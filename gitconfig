@@ -36,4 +36,4 @@
 	this = !git init && git add . && git commit -m \"initial commit\"
 	l = log --graph --pretty=format:'%C(yellow)%h%Creset%C(blue)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset'
 	ll = !git l --all
-	ls = git log --graph --simplify-by-decoration --pretty=format:'%d' --all
+	ls = log --graph --simplify-by-decoration --pretty=format:'%d' --all
