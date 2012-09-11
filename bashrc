@@ -101,6 +101,9 @@ bind "set show-all-if-ambiguous On"
 alias g="git"
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -nr | head -n 20"
 
+# force my custom mamp php.ini on cli
+alias php="php -c /Applications/MAMP/bin/php/php5.3.6/conf/php.ini"
+
 # work related aliases
 alias latto-dir="cd ~/Sites/work/ding/ding2tal.ting.dk/profiles/ding2/themes/latto/"
 alias d-cc="drush cc all"
@@ -108,6 +111,7 @@ alias d-cc="drush cc all"
 if [ -d ~/.fogbugz-php-cli ] ; then
   alias fb="php ~/.fogbugz-php-cli/working.php"
 fi
+alias brond="~/Sites/work/ding/aakb_ssh_tunnel.sh"
 
 # prompt
 DATE_PIECE="\[${color_gray}\]\$(date '+%a %H:%M:%S')\[${color_none}\]"
