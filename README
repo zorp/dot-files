@@ -1,5 +1,30 @@
-This is my dotfiles inspired from various places originally copied from my good mate ranza, https://github.com/ranza
+# WHAT IS
+This is my dot files inspired from various places originally copied from my good mate ranza, https://github.com/ranza
 
+I work on OS-X everything is tested to work in this environment.
+
+# DEPENDENCIES
+My dot files depend on some packages installed with brew.
+
+- First get and install brew, it's really easy. http://mxcl.github.com/homebrew/
+- Install some neat stuff (to be honest I can't remember the exact dependencies)
+ - bash-completion
+ - git-extras
+ - hub
+ 
+# INSTALL
+
+- Clone into yout home dir
+- Setup symlinks to:
+ - .gitconfig -> .dot-files/gitconfig
+ - .inputrc -> .dot-files/inputrc
+ - .bash_profile -> .dot-files/bash_profile
+ - .bashrc -> .dot-files/bashrc
+ - .bin -> .dot-files/bin/
+
+You are set to go with awesome terminal, on top I use iTerm and the awesome colorprofiles https://github.com/zorp/iTerm-2-Color-Themes
+
+--------------------------------------------------------
 
 ## LEGAL - this repro is licensed under the WTFPL v2.
 
