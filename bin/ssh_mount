@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ -z "$1" ]; then
+  echo "You must provide connection string ex. 'user@some-host.net:/home/user/'";
+else
+  sshfs $1 ~/mountpoint -oauto_cache,reconnect,defer_permissions,negative_vncache,volname=mountpoint
+fi

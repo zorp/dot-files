@@ -39,7 +39,8 @@ if [ $OS == "Darwin" ]; then
     #export PATH=$PATH:/Applications/MAMP/bin/php5.2/bin/:/Applications/MAMP/bin/apache2/bin/
 
     # set editor
-    export EDITOR='mate -w'
+    # export EDITOR='mate -w' #TextMate
+    export EDITOR='subl -w' #sublime text 2
 
     GIT_PIECE='$(__git_ps1 " \[$color_yellow\](%s)\[$color_none\]")'
 
