@@ -116,4 +116,4 @@ alias brond="~/Sites/work/ding/aakb_ssh_tunnel.sh"
 
 # prompt
 # DATE_PIECE="\[${color_gray}\]\$(date '+%a %H:%M:%S')\[${color_none}\]"
-export PS1="\u\[${color_green}\]@\[${color_none}\]\h\n \[${color_gray}\]\w${GIT_PIECE}\n\[${color_green}\]\$\[${color_none}\] "
+export PS1="\u\[${color_green}\]@\[${color_none}\]\h\n\[${color_gray}\]\w${GIT_PIECE}\n\[${color_green}\]\$\[${color_none}\] "
