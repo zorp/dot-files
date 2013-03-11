@@ -101,6 +101,7 @@ bind "set show-all-if-ambiguous On"
 # general aliases
 alias g="git"
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -nr | head -n 20"
+alias lol="fortune | cowsay | lolcat"
 
 # force my custom mamp php.ini on cli
 alias php="php -c /Applications/MAMP/bin/php/php5.3.6/conf/php.ini"
