@@ -107,7 +107,6 @@ alias lol="fortune | cowsay | lolcat"
 alias php="php -c /Applications/MAMP/bin/php/php5.3.6/conf/php.ini"
 
 # work related aliases
-alias latto-dir="cd ~/Sites/work/ding/ding2tal.ting.dk/profiles/ding2/themes/latto/"
 alias d-cc="drush cc all"
 # if Fogbugz php cli exist add an alias
 if [ -d ~/.fogbugz-php-cli ] ; then
