@@ -4,3 +4,7 @@
 .Trashes
 Thumbs.db
 .sass-cache
+
+# Working directories used when developing #
+############################################
+my_stuff
